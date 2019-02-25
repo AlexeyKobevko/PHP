@@ -44,7 +44,7 @@ function addImages($img) {
     foreach ($img as $item) {
         $info = new SplFileInfo($item);
         if ($info->getExtension() == 'jpeg' || $info->getExtension() == 'jpg'){
-            $result .= "<img src=\"$item\" width=\"200\">";
+            $result .= "<a href=\"$item\" target=\"_blank\">" . "<img src=\"$item\" width=\"200\"></a>";
         }
     }
     return $result;
