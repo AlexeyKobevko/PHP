@@ -17,6 +17,6 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
     'menu' => addMenu($menu),
     'styles' => CSS,
     'content' => render(TEMPLATES_DIR . 'gallery.tpl', [
-        'gallery' => addImages($images)
+        'gallery' => addImages()
     ])
 ]);
