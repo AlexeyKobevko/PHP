@@ -42,14 +42,14 @@ function addMenu($array){
 }
 
 function addImages() {
-    $folderImg = WWW_DIR . 'img/';
+    $folderImg = 'img/';
     $arrayImg = scandir($folderImg);
     $result = '';
     foreach ($arrayImg as $img) {
         $info = new SplFileInfo($img);
         if ($info->getExtension() == 'jpeg' || $info->getExtension() == 'jpg') {
             $src = $folderImg . $img;
-            $result .= "<a href=\"$src\" target=\"_blank\">" . "<img class='small' src=\"$src\" alt='funny dog'></a>";
+            $result .= "<a href=\"/$src\" target=\"_blank\">" . "<img class='small' src=\"/$src\" alt='funny dog'></a>";
         }
     }
     return $result;
