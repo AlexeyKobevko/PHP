@@ -1,1 +1,1 @@
-<div class="gallery-wrapper"></div>
+<div class="gallery-wrapper">{{GALLERY}}</div>

@@ -7,5 +7,6 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
 	'title' => 'Главная',
 	'h1' => 'Привет, мир!',
 	'content' => 'Я родился',
-    'menu' => addMenu($menu)
+    'menu' => addMenu($menu),
+    'styles' => CSS //TODO этот вариант не сработал, почему?
 ]);
