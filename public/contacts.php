@@ -7,5 +7,6 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
     'title' => 'Контакты',
     'h1' => 'Контакты',
     'menu' => addMenu($menu),
+    'styles' => CSS,
     'content' => render(TEMPLATES_DIR . 'contacts.tpl')
 ]);
