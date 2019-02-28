@@ -3,11 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{{TITLE}}</title>
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="{{CSS}}">
 </head>
 <body>
 <header>
-	{{MENU}}
+	<div class="menu">
+		{{MENU}}
+	</div>
 </header>
 	<h1>{{H1}}</h1>
 	<div>{{CONTENT}}</div>

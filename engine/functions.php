@@ -55,6 +55,20 @@ function addImages() {
     return $result;
 }
 
+//function addImages() {
+//    $folderImg = 'img/';
+//    $arrayImg = scandir($folderImg);
+//    $result = '';
+//    foreach ($arrayImg as $img) {
+//        $info = new SplFileInfo($img);
+//        if ($info->getExtension() == 'jpeg' || $info->getExtension() == 'jpg') {
+//            $src = $folderImg . $img;
+//            $result .= "<a href=\"/$src\" target=\"_blank\">" . "<img class='small' src=\"/$src\" alt='funny dog'></a>";
+//        }
+//    }
+//    return $result;
+//}
+
 //$result = '';
 //////foreach ($img as $item) {
 //////    $info = new SplFileInfo($item);

@@ -1,1 +1,3 @@
-<div class="gallery-wrapper">{{GALLERY}}</div>
+<div class="wrapper">
+{{IMAGE}}
+</div>
