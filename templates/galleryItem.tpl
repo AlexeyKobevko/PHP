@@ -1,14 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{TITLE}}</title>
-    <link rel="stylesheet" href="{{CSS}}">
-</head>
-<body>
 <div class="image-wrapper">
-    <div>{{IMAGE}}</div>
-    <div class="count"><span>{{COUNT}}</span></div>
+    <img src="{{FULL_URL}}" alt="{{TITLE}}"/>
+    <div>Views: {{VIEWS}}</div>
 </div>
-</body>
-</html>

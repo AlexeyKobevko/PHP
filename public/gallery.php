@@ -7,8 +7,5 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
    'h1' => 'Галерея',
     'menu' => addMenu($menu),
     'CSS' => CSS,
-    'content' => render(TEMPLATES_DIR . 'gallery.tpl', [
-        'image' => createGallery(),
-    ])
+    'content' => createGallery()
 ]);
-
