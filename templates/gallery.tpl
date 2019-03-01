@@ -1,1 +1,1 @@
-<div class="gallery-wrapper">{{GALLERY}}</div>
+<a href="/galleryItem.php?id={{ID}}"><img src="{{URL}}" alt="{{TITLE}}"></a>

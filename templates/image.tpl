@@ -1,0 +1,1 @@
+<a href="/gallery.php?id={{id}}"><img class="small" src="{{URL}}" alt="100"></a>
