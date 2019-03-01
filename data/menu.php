@@ -28,6 +28,10 @@ $menu = [
         'link' => '/gallery.php/',
     ],
     [
+        'title' => 'Калькулятор',
+        'link' => '/calculator.php/',
+    ],
+    [
         'title' => 'Контакты',
         'link' => '/contacts.php/',
     ],

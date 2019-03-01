@@ -20,3 +20,4 @@ require_once ENGINE_DIR . 'db.php';
 require_once ENGINE_DIR . 'news.php';
 require_once DATA_DIR . 'menu.php';
 require_once ENGINE_DIR . 'images.php';
+require_once ENGINE_DIR . 'calc.php';
