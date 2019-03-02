@@ -121,4 +121,41 @@ header {
   margin-bottom: 3px;
 }
 
+.catalog-wrapper {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.catalog-wrapper .catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 263px;
+}
+.product .name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+.product .price {
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+.product .desc {
+  overflow-wrap: break-word;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+.product:hover {
+  box-shadow: 10px 10px 19px 0px #0b1544;
+}
+
 /*# sourceMappingURL=style.css.map */

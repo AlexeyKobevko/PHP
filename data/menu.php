@@ -24,6 +24,10 @@ $menu = [
 //        ],
 //    ],
     [
+        'title' => 'Каталог',
+        'link' => '/catalog.php/',
+    ],
+    [
         'title' => 'Галерея',
         'link' => '/gallery.php/',
     ],

@@ -22,3 +22,4 @@ require_once DATA_DIR . 'menu.php';
 require_once ENGINE_DIR . 'images.php';
 require_once ENGINE_DIR . 'calc.php';
 require_once ENGINE_DIR . 'reviews.php';
+require_once ENGINE_DIR . 'catalog.php';
