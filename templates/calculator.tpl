@@ -1,5 +1,5 @@
 <div class="calc">
-    <form class="calc-form" action="/calculator.php" method="post">
+    <form class="calc-form" action="/calculator.php" method="POST">
         <input type="text" name="a" placeholder="Первый аргумент" size="11" required/>
         <label for="operations"></label>
         <select name="operations" id="operations" required>

@@ -32,6 +32,10 @@ $menu = [
         'link' => '/calculator.php/',
     ],
     [
+        'title' => 'Отзывы',
+        'link' => '/reviews.php/',
+    ],
+    [
         'title' => 'Контакты',
         'link' => '/contacts.php/',
     ],

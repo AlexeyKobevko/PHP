@@ -7,9 +7,11 @@ function createConnection ()
     return $db;
 }
 
-function execQuery($sql)
+function execQuery($sql, $db = false)
 {
-    $db = createConnection();
+    if (!$db) {
+        $db = createConnection();
+    }
     $result = mysqli_query($db, $sql);
     mysqli_close($db);
     return $result;
@@ -34,4 +36,12 @@ function show($sql)
         return null;
     }
     return $result[0];
+}
+
+function escapeString($db, $sql)
+{
+    return mysqli_real_escape_string(
+        $db,
+        (string)htmlspecialchars(strip_tags($sql))
+    );
 }

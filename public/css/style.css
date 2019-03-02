@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-around;
@@ -17,19 +22,25 @@ a {
   text-decoration: none;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-}
-
 ul {
   display: flex;
 }
 
+header {
+  background: inherit;
+}
+
+.menu {
+  height: 80px;
+  background-color: #0B1544;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 10px 10px 0 #0b1544;
+}
+
 .menu li {
   margin: 5px;
-  border: 1px solid gray;
-  background-color: gray;
 }
 
 .menu a {
@@ -37,6 +48,7 @@ ul {
   height: 100%;
   margin: 5px;
   color: #ffffff;
+  font-size: 1.2rem;
 }
 
 .small {
@@ -62,6 +74,51 @@ ul {
 .calc-result, .calc-result2 {
   margin-left: 5px;
   font-size: 1.5rem;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-left: 20px;
+}
+.review-form input {
+  background-color: #122775;
+  height: 30px;
+  border: #0B1544;
+  border-radius: 5px;
+  box-shadow: 10px 10px 15px 0px rgba(11, 21, 68, 0.75);
+  margin: 0 0 20px 0;
+  padding: 5px;
+  color: #fff;
+}
+.review-form textarea, .review-form button {
+  border-radius: 5px;
+  box-shadow: 10px 10px 15px 0px rgba(11, 21, 68, 0.75);
+  margin: 0 0 20px 0;
+  padding: 5px;
+  border: none;
+}
+
+.comment-wrapper {
+  width: 250px;
+  margin: 0 0 20px 20px;
+  box-shadow: 10px 10px 15px 0px rgba(11, 21, 68, 0.75);
+  border-radius: 5px;
+  padding: 5px;
+}
+.comment-wrapper .author {
+  color: #122775;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.comment-wrapper .date {
+  font-size: 0.8rem;
+}
+.comment-wrapper .comment {
+  font-size: 1rem;
+  margin-bottom: 3px;
 }
 
 /*# sourceMappingURL=style.css.map */
