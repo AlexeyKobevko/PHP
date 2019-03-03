@@ -87,3 +87,12 @@ function escapeString($db, $string)
         (string)htmlspecialchars(strip_tags($string))
     );
 }
+
+function escapeInt($db, $int)
+{
+    //избавляемся от sql и html инъекций
+    return mysqli_real_escape_string(
+        $db,
+        (int)htmlspecialchars(strip_tags($int))
+    );
+}

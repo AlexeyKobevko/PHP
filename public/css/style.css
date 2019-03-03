@@ -87,14 +87,14 @@ header {
   height: 30px;
   border: #0B1544;
   border-radius: 5px;
-  box-shadow: 10px 10px 15px 0px rgba(11, 21, 68, 0.75);
+  box-shadow: 10px 10px 15px 0 rgba(11, 21, 68, 0.75);
   margin: 0 0 20px 0;
   padding: 5px;
   color: #fff;
 }
 .review-form textarea, .review-form button {
   border-radius: 5px;
-  box-shadow: 10px 10px 15px 0px rgba(11, 21, 68, 0.75);
+  box-shadow: 10px 10px 15px 0 rgba(11, 21, 68, 0.75);
   margin: 0 0 20px 0;
   padding: 5px;
   border: none;
@@ -103,7 +103,7 @@ header {
 .comment-wrapper {
   width: 250px;
   margin: 0 0 20px 20px;
-  box-shadow: 10px 10px 15px 0px rgba(11, 21, 68, 0.75);
+  box-shadow: 10px 10px 15px 0 rgba(11, 21, 68, 0.75);
   border-radius: 5px;
   padding: 5px;
 }
@@ -155,7 +155,76 @@ header {
 }
 
 .product:hover {
-  box-shadow: 10px 10px 19px 0px #0b1544;
+  box-shadow: 10px 10px 19px 0 #0b1544;
+}
+
+.add-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.add-product {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+.add-product .add-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.add-product input, .add-product textarea, .add-product button {
+  margin-bottom: 15px;
+  padding: 2px 5px;
+}
+.add-product button {
+  width: 120px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.create, .update {
+  background-color: #0B1544;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin: 20px;
+  color: #ffffff;
+  box-shadow: 10px 10px 19px 0 #0b1544;
+}
+
+.delete {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin: 20px;
+  background-color: darkred;
+  color: white;
+  box-shadow: 10px 10px 23px 2px #f06868;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+}
+
+.message-result {
+  color: green;
+}
+
+.sure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sure .forms-block {
+  display: flex;
+}
+
+.question {
+  color: #0b1544;
+  font-size: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

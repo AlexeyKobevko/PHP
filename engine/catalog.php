@@ -37,3 +37,46 @@ function showProduct($id)
 
     return render(TEMPLATES_DIR . 'singleProduct.tpl', $product);
 }
+
+function insertProduct($name, $desc, $price, $image)
+{
+    $db = createConnection();
+
+    $name = escapeString($db, $name);
+
+    $desc = escapeString($db, $desc);
+
+    $price = escapeString($db, $price);
+
+    $image = escapeString($db, $image);
+
+    $sql = "INSERT INTO `products`(`name`, `description`, `price`, `image`) VALUES ('$name', '$desc', '$price', '$image')";
+
+    return execQuery($sql, $db);
+}
+
+function updateProduct($name, $desc, $price, $image, $id)
+{
+    $db = createConnection();
+
+    $name = escapeString($db, $name);
+
+    $desc = escapeString($db, $desc);
+
+    $price = escapeString($db, $price);
+
+    $image = escapeString($db, $image);
+
+    $sql = "UPDATE `products` SET `name` = '$name', `description` = '$desc', `price` = '$price', `image` = '$image' WHERE `id` = '$id'";
+
+    return execQuery($sql, $db);
+}
+
+function deleteProduct($id)
+{
+    $db = createConnection();
+
+    $sql = "DELETE FROM `products` WHERE `id` = '$id'";
+
+    return execQuery($sql, $db);
+}
