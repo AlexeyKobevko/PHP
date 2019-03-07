@@ -16,6 +16,7 @@ require_once __DIR__ . '/../config/config.php';
 //$row = execQuery($sql);
 //var_dump($row);
 
+
 $news = getNews();
 $newsContent = renderNews($news);
 
@@ -26,3 +27,5 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
     'css' => CSS,
     'content' => $newsContent
 ]);
+
+

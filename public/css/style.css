@@ -12,6 +12,7 @@
 
 h1 {
   text-align: center;
+  color: #0B1544;
 }
 
 ul {
@@ -133,18 +134,26 @@ header {
 }
 
 .product {
-  display: flex;
+  display: grid;
   flex-direction: column;
   margin-bottom: 15px;
   width: 263px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3fr 0.5fr 0.5fr;
+  grid-template-areas: "photo photo photo photo" "name name btn btn" "price price btn btn";
+}
+.product .photo {
+  grid-area: photo;
 }
 .product .name {
+  grid-area: name;
   font-weight: 600;
   font-size: 1.5rem;
   margin-bottom: 15px;
   padding-left: 10px;
 }
 .product .price {
+  grid-area: price;
   margin-bottom: 15px;
   padding-left: 10px;
 }
@@ -152,6 +161,20 @@ header {
   overflow-wrap: break-word;
   padding-left: 10px;
   margin-bottom: 15px;
+}
+.product .btn {
+  grid-area: btn;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product .btn button {
+  border-radius: 5px;
+  color: white;
+  background-color: #0B1544;
+  box-shadow: 10px 10px 15px 0 rgba(11, 21, 68, 0.75);
+  padding: 5px;
+  border: none;
 }
 
 .product:hover {
@@ -225,6 +248,69 @@ button {
 .question {
   color: #0b1544;
   font-size: 1.5rem;
+}
+
+.auth {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 0 20px;
+  color: #0B1544;
+  font-weight: 600;
+  background-color: #fff;
+  box-shadow: 6px 2px 18px 2px #7c75b3;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 350px;
+  border-radius: 5px;
+  background-color: #0B1544;
+  box-shadow: 0 10px 10px 0 #0b1544;
+  opacity: 0.9;
+}
+.profile h3, .profile p {
+  color: white;
+  margin-top: 20px;
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+}
+.login .errors {
+  text-align: center;
+  background-color: red;
+  color: white;
+}
+.login .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  height: 350px;
+  background-color: #0B1544;
+  box-shadow: 0 10px 10px 0 #0b1544;
+  opacity: 0.9;
+}
+.login input, .login button {
+  margin-top: 25px;
+  border: none;
+  padding: 3px 5px;
+  background-color: #fff;
+  color: #0B1544;
+}
+.login a {
+  color: white;
+  margin-top: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */
