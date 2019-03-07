@@ -24,8 +24,20 @@ $menu = [
 //        ],
 //    ],
     [
+        'title' => 'Каталог',
+        'link' => '/catalog.php/',
+    ],
+    [
         'title' => 'Галерея',
         'link' => '/gallery.php/',
+    ],
+    [
+        'title' => 'Калькулятор',
+        'link' => '/calculator.php/',
+    ],
+    [
+        'title' => 'Отзывы',
+        'link' => '/reviews.php/',
     ],
     [
         'title' => 'Контакты',

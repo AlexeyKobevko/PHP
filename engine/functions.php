@@ -18,9 +18,10 @@ function render($file, $variables = []) {
 	}
 	
 	foreach ($variables as $key => $value) {
-		if(empty($value) || !is_string($value)) {
-			continue;
-		}
+//		if(empty($value) || !is_string($value)) {
+//		    var_dump($value);
+//			continue;
+//		}
 		
 		$key = '{{' . strtoupper($key) . '}}';
 		$templateContent = str_replace($key, $value, $templateContent);
