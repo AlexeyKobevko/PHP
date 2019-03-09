@@ -78,5 +78,41 @@ function deleteProduct($id)
 
     $sql = "DELETE FROM `products` WHERE `id` = '$id'";
 
+
     return execQuery($sql, $db);
+}
+
+function renderProductsCart($cart)
+{
+    if (empty($cart)) {
+        return 'Корзина пуста';
+    }
+
+    $ids = array_keys($cart);
+
+    $sql = "SELECT * FROM `products` WHERE `id` IN (" . implode(', ', $ids) . ")";
+
+    $products = getAssocResult($sql);
+
+    $result = '';
+    $total = 0;
+    foreach ($products as $product) {
+        $name = $product['name'];
+        $id = $product['id'];
+        $count = $cart[$product['id']];
+        $price = $product['price'];
+        $productSum = $count * $price;
+        $result .= render(TEMPLATES_DIR . 'product/cartListItem.tpl', [
+            'name' => $name,
+            'id' => $id,
+            'count' => $count,
+            'price' => $price,
+            'sum' => $productSum
+        ]);
+        $total += $productSum;
+    }
+    return render(TEMPLATES_DIR . 'product/cartList.tpl', [
+        'content' => $result,
+        'sum' => $total
+    ]);
 }

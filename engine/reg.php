@@ -20,6 +20,7 @@ function loginUser($login, $password)
 
         if ($user) {
             $_SESSION['login'] = $user;
+
             header("Location: /profile.php");
         } else {
             echo 'Неверная пара логин-пароль, попробуйте ещё раз';

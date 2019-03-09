@@ -2,12 +2,13 @@
 
 require_once __DIR__ . '/../config/config.php';
 
-$good = $_SESSION['cart'];
-var_dump($good);
-render(TEMPLATES_DIR . 'index.tpl', [
-    'menu' => addMenu($menu),
-    'title' => 'Корзина',
-    'h1' => 'корзина',
-    'css' => CSS,
-    'content' => ''
-]);
+echo     render(TEMPLATES_DIR . 'index.tpl', [
+        'menu' => addMenu($menu),
+        'title' => 'Корзина',
+        'h1' => 'Корзина',
+        'css' => CSS,
+        'content' => renderProductsCart($_COOKIE['cart'] ?? []),
+        'button' => empty($_SESSION['login'])
+            ? '<a href="/login.php">Войти</a>'
+            : '<a href="/product/createOrder.php"><button>Оформить заказ</button></a>'
+    ]);

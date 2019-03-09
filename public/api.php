@@ -4,12 +4,14 @@ require_once __DIR__ . '/../config/config.php';
 
 function error($error_text)
 {
-    header('Content-Type: application/json');
-    echo json_encode([
-        'error' => true,
-        'error_text' => $error_text,
-        'data' => null
-    ]);
+    echo $error_text;
+//    header('Content-Type: application/json');
+
+//    echo json_encode([
+//        'error' => true,
+//        'error_text' => $error_text,
+//        'data' => null
+//    ]);
     exit();
 }
 
@@ -20,12 +22,13 @@ if (empty($_POST['apiMethod'])) {
 
 function success($data = true)
 {
-    header('Content-Type: application/json');
-    echo json_encode([
-        'error' => false,
-        'error_text' => null,
-        'data' => $data
-    ]);
+//    header('Content-Type: application/json');
+//    echo json_encode([
+//        'error' => false,
+//        'error_text' => null,
+//        'data' => $data
+//    ]);
+    echo 'OK';
     exit();
 }
 
@@ -50,22 +53,33 @@ if ($_POST['apiMethod'] === 'login') {
     }
 }
 
-if (empty($_POST['apiMethod'])) {
-    error('Корзина пуста');
-    exit();
+if ($_POST['apiMethod'] === 'addToCart') {
+
+    $id = $_POST['postData']['id'] ?? 0;
+
+    if(!$id) {
+        error('ID не передан');
+    }
+
+    $cart = $_COOKIE['cart'] ?? [];
+
+    $count = $cart[$id] ?? 0;
+    $count++;
+
+    setcookie("cart[$id]", $count);
+    success();
 }
 
-if ($_POST['apiMethod'] === 'good') {
-    $id = $_POST['postData']['id'] ?? '';
+if ($_POST['apiMethod'] === 'removeFromCart') {
+    $id = $_POST['postData']['id'] ?? 0;
 
-    $sql = "SELECT * FROM `products` WHERE `id` = '$id'";
-    $good = show($sql);
-
-    if ($good) {
-        $_SESSION['cart'] = $good;
-        echo 'OK';
-
-    } else {
-        error('Что-то пошло не так');
+    if(!$id) {
+        error('ID не передан');
     }
+
+//    setcookie( "cart[$id]", null);
+
+    success();
+
+
 }
