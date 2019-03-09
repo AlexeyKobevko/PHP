@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 define('SITE_DIR', __DIR__ . '/../');
 define('CONFIG_DIR', SITE_DIR . 'config/');
 define('DATA_DIR', SITE_DIR . 'data/');
@@ -23,3 +25,5 @@ require_once ENGINE_DIR . 'images.php';
 require_once ENGINE_DIR . 'calc.php';
 require_once ENGINE_DIR . 'reviews.php';
 require_once ENGINE_DIR . 'catalog.php';
+require_once ENGINE_DIR . 'reg.php';
+//require_once ENGINE_DIR . 'api.php';

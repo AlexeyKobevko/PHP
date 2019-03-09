@@ -43,4 +43,8 @@ $menu = [
         'title' => 'Контакты',
         'link' => '/contacts.php/',
     ],
+    [
+        'title' => 'Корзина',
+        'link' => '/cart.php/',
+    ],
 ];
