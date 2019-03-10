@@ -68,3 +68,48 @@ $('.removeFromCart').click((e) => {
         }
     });
 });
+
+$('.order-status').click((e) => {
+    let $id = $(e.target).data('id');
+    console.log($id);
+
+    $.post({
+        url: '/api.php',
+        data: {
+            apiMethod: 'changeStatusOrder',
+            postData: {
+                id: $id,
+            }},
+        success: function (data) {
+            if (data === 'OK') {
+                location.reload();
+
+            } else {
+                alert(data);
+            }
+        }
+    });
+});
+
+$('.order-cancel').click((e) => {
+    let $id = $(e.target).data('id');
+    console.log($id);
+
+    $.post({
+        url: '/api.php',
+        data: {
+            apiMethod: 'cancelOrder',
+            postData: {
+                id: $id,
+            }},
+        success: function (data) {
+            if (data === 'OK') {
+                location.reload();
+
+            } else {
+                alert(data);
+            }
+        }
+    });
+});
+

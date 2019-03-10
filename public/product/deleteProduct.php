@@ -18,5 +18,6 @@ echo render(TEMPLATES_DIR . 'index.tpl',[
     'menu' => addMenu($menu),
     'h1' => 'Удаление товара',
     'login' => choiceIcon(),
+    'orders' => isAdmin() ? "<a href='/admin/ordersControl.php'>Заказы</a>" : '',
     'content' => '<div>Товар удалён</div>'
 ]);

@@ -5,13 +5,12 @@ require_once __DIR__ . '/../config/config.php';
 function error($error_text)
 {
     echo $error_text;
-//    header('Content-Type: application/json');
-
-//    echo json_encode([
-//        'error' => true,
-//        'error_text' => $error_text,
-//        'data' => null
-//    ]);
+    header('Content-Type: application/json');
+    echo json_encode([
+        'error' => true,
+        'error_text' => $error_text,
+        'data' => null
+    ]);
     exit();
 }
 
@@ -22,13 +21,12 @@ if (empty($_POST['apiMethod'])) {
 
 function success($data = true)
 {
-//    header('Content-Type: application/json');
-//    echo json_encode([
-//        'error' => false,
-//        'error_text' => null,
-//        'data' => $data
-//    ]);
-    echo 'OK';
+    header('Content-Type: application/json');
+    echo json_encode([
+        'error' => false,
+        'error_text' => null,
+        'data' => $data
+    ]);
     exit();
 }
 
@@ -82,4 +80,19 @@ if ($_POST['apiMethod'] === 'removeFromCart') {
     success();
 
 
+}
+
+if ($_POST['apiMethod'] === 'cancelOrder') {
+
+    $id = $_POST['postData']['id'] ?? 0;
+
+    $elem = show("SELECT * FROM `orders` WHERE `id` = '$id'");
+
+    $status = (int)$elem['status'];
+
+    if ($status == 4) {
+        exit();
+    }
+    execQuery("UPDATE `orders` SET `status`='4' WHERE `id` = '$id'");
+    echo 'OK';
 }

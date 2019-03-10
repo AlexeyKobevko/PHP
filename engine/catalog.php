@@ -122,7 +122,7 @@ function renderProductsCart($cart)
 function generateMyOrdersPage()
 {
     $user_id = $_SESSION['login']['id'];
-    $orders = getAssocResult("SELECT * FROM `orders` WHERE `user_id` = $user_id");
+    $orders = getAssocResult("SELECT * FROM `orders` WHERE `user_id` = $user_id ORDER BY `status` ASC");
 
     $result ='';
     foreach ($orders as $order) {
@@ -166,4 +166,54 @@ function generateMyOrdersPage()
         ]);
     }
     return $result;
+}
+
+function generateOrdersControlPage()
+{
+    $orders = getAssocResult("SELECT * FROM `orders` ORDER BY `status` ASC");
+
+    $result ='';
+    foreach ($orders as $order) {
+        $order_id = $order['id'];
+        $products = getAssocResult("
+            SELECT * FROM `orders_products` as op
+            JOIN `products` as `p` ON `p`.`id` = `op`.`product_id`
+            WHERE `order_id` = $order_id");
+
+        $content = '';
+        $total = 0;
+        foreach ($products as $product) {
+            $name = $product['name'];
+            $id = $product['id'];
+            $count = $product['amount'];
+            $price = $product['price'];
+            $productSum = $count * $price;
+            $content .= render(TEMPLATES_DIR . 'product/orderTableRow.tpl', [
+                'name' => $name,
+                'id' => $id,
+                'count' => $count,
+                'price' => $price,
+                'sum' => $productSum
+            ]);
+            $total += $productSum;
+        }
+
+        $statuses = [
+            0 => 'Заказ оформлен',
+            1 => 'Заказ собирается',
+            2 => 'Заказ готов',
+            3 => 'Заказ завершён',
+            4 => 'Заказ отменён',
+        ];
+
+        $result .= render(TEMPLATES_DIR . 'admin/ordersControl.tpl', [
+            'id' => $order_id,
+            'content' => $content,
+            'sum' => $total,
+
+            'status' => $statuses[$order['status']]
+        ]);
+    }
+    return $result;
+
 }
