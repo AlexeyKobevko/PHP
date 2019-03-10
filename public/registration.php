@@ -19,5 +19,7 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
     'title' => 'Регистрация',
     'h1' => 'Регистрация',
     'menu' => addMenu($menu),
+    'login' => choiceIcon(),
+    'orders' => isAdmin() ? "<a href='/admin/ordersControl.php'>Заказы</a>" : '',
     'content' => render(TEMPLATES_DIR . 'registration.tpl')
 ]);

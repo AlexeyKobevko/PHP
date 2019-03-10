@@ -29,5 +29,6 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
         'css' => CSS,
         'menu' => addMenu($menu),
         'h1' => 'Добавление товара',
+        'login' => choiceIcon(),
         'content' => render(TEMPLATES_DIR . 'product/createProduct.tpl')
 ]);

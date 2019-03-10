@@ -8,11 +8,7 @@
 <body>
 <div class="menu">
     {{MENU}}
-</div>
-<div class="buttons">
-    <form action="/product/createProduct.php">
-        <button class="create" name="crud" type="submit" value="create">Добавить товар</button>
-    </form>
+    {{LOGIN}}
 </div>
 <div class="catalog-wrapper">
     <div class="catalog">
@@ -20,6 +16,6 @@
     </div>
 </div>
 <script src="/js/jquery.min.js"></script>
-<script src="/js/cart.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

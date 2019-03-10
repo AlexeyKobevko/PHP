@@ -15,11 +15,7 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
     'h1' => "Картинка $id",
     'css' => CSS,
     'menu' => addMenu($menu),
+    'login' => choiceIcon(),
+    'orders' => isAdmin() ? "<a href='/admin/ordersControl.php'>Заказы</a>" : '',
     'content' => showImage($id)
 ]);
-//echo render(TEMPLATES_DIR . 'galleryItem.tpl', [
-//    'title' => 'Море',
-//    'CSS' => CSS,
-//    'image' => $image,
-//    'count' => "Просмотров: $count"
-//]);

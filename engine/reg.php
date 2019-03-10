@@ -1,13 +1,13 @@
 <?php
 
-function insertUser($name, $login, $password, $groop = 'user') {
+function insertUser($name, $login, $password, $role = 0) {
     $db = createConnection();
 
     $name = escapeString($db, $name);
     $login = escapeString($db, $login);
     $password = escapeString($db, $password);
 
-    $sql = "INSERT INTO `users`(`name`, `login`, `password`, `groop`) VALUES ('$name', '$login', '$password', '$groop')";
+    $sql = "INSERT INTO `users`(`name`, `login`, `password`) VALUES ('$name', '$login', '$password')";
 
     return execQuery($sql, $db);
 }

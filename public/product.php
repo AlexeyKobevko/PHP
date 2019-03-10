@@ -11,9 +11,11 @@ if (!$id) {
 
 $id = (int)$id;
 
-echo render(TEMPLATES_DIR . 'catalog.tpl', [
+echo render((isAdmin()) ? TEMPLATES_DIR . 'admin/adminCatalog.tpl' : TEMPLATES_DIR . 'catalog.tpl', [
     'title' => 'Каталог',
     'css' => CSS,
     'menu' => addMenu($menu),
+    'login' => choiceIcon(),
+    'orders' => isAdmin() ? "<a href='/admin/ordersControl.php'>Заказы</a>" : '',
     'content' => showProduct($id)
 ]);

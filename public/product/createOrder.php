@@ -37,6 +37,7 @@ if(execQuery($sql)) {
     foreach ($_COOKIE['cart'] as $productId => $amount) {
         setcookie("cart[$productId]", null, -1, '/');
     }
+    header('Location: /myOrders.php');
 } else {
     echo 'Произошла ошибка';
 }

@@ -41,6 +41,7 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
         'css' => CSS,
         'menu' => addMenu($menu),
         'h1' => 'Изменение товара',
+        'login' => choiceIcon(),
         'content' => render(TEMPLATES_DIR . 'product/updateProduct.tpl', [
             'name' => $product['name'],
             'description' => $product['description'],
