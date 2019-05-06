@@ -5,12 +5,21 @@ $('.addToCart').click((e) => {
     $.post({
         url: '/api.php',
         data: {
-            apiMethod: 'good',
+            apiMethod: 'addToCart',
             postData: {
                 id: $id,
             }},
         success: function (data) {
-            console.log(data);
+            if (data === 'OK') {
+                alert('Товар добавлен в корзину');
+            } else {
+                alert(data);
+            }
         }
     });
+});
+
+$('.removeFromCart').click((e) => {
+    let $id = $(e.target).data('id');
+    console.log($id);
 });

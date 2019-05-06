@@ -56,25 +56,22 @@ function addImages() {
     return $result;
 }
 
-//function addImages() {
-//    $folderImg = 'img/';
-//    $arrayImg = scandir($folderImg);
-//    $result = '';
-//    foreach ($arrayImg as $img) {
-//        $info = new SplFileInfo($img);
-//        if ($info->getExtension() == 'jpeg' || $info->getExtension() == 'jpg') {
-//            $src = $folderImg . $img;
-//            $result .= "<a href=\"/$src\" target=\"_blank\">" . "<img class='small' src=\"/$src\" alt='funny dog'></a>";
-//        }
-//    }
-//    return $result;
-//}
+function isAdmin()
+{
+    if (!$_SESSION) {
+        return false;
+    }
+    if ((int)$_SESSION['login']['role'] === 1) {
+        return true;
+    } else return false;
+}
 
-//$result = '';
-//////foreach ($img as $item) {
-//////    $info = new SplFileInfo($item);
-//////    if ($info->getExtension() == 'jpeg' || $info->getExtension() == 'jpg'){
-//////        $result .= "<a href=\"$item\" target=\"_blank\">" . "<img src=\"$item\" width=\"200\"></a>";
-//////    }
-//////}
-//////return $result;
+function choiceIcon()
+{
+    if (empty($_SESSION['login'])) {
+        $icon = render(TEMPLATES_DIR . 'loginButtons.tpl');
+    } else {
+        $icon = render(TEMPLATES_DIR . 'userIcon.tpl');
+    }
+    return $icon;
+}

@@ -17,6 +17,8 @@ echo render(TEMPLATES_DIR . 'index.tpl', [
     'title' => 'Калькулятор',
     'h1' => 'Калькулятор',
     'css' => CSS,
+    'login' => choiceIcon(),
+    'orders' => isAdmin() ? "<a href='/admin/ordersControl.php'>Заказы</a>" : '',
     'content' => render(TEMPLATES_DIR . 'calculator.tpl', [
         'result' => $result,
         'result2' => $result2

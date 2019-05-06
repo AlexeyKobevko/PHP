@@ -8,7 +8,13 @@
 <body>
 <div class="menu">
     {{MENU}}
+    {{ORDERS}}
     {{LOGIN}}
+</div>
+<div class="buttons">
+    <form action="/product/createProduct.php">
+        <button class="create" name="crud" type="submit" value="create">Добавить товар</button>
+    </form>
 </div>
 <div class="catalog-wrapper">
     <div class="catalog">

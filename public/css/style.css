@@ -313,4 +313,13 @@ button {
   margin-top: 25px;
 }
 
+.user-icon {
+  width: 60px;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
 /*# sourceMappingURL=style.css.map */
